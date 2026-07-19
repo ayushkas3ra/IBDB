@@ -3,8 +3,9 @@ import "./SearchBook.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import ChatSection from "@/components/ChatSection/ChatSection";
 
-function SearchBook() {
+function Book() {
   const { id } = useParams();
   const [book, setBook] = useState(null);
 
@@ -31,7 +32,7 @@ function SearchBook() {
         <div className="book-title">{book.title}</div>
         <div className="book-details">
           <img src={book.image} alt={book.title} className="book-cover" />
-          <div className="book-description">
+          <div className="book-info">
             <div className="book-author">
               <b>Author</b> : {book.author}
             </div>
@@ -39,20 +40,22 @@ function SearchBook() {
               <b>Genre</b> : {book.category}
             </div>
             <div className="book-ratings">
-              <b>Ratings</b> : ⭐{book.rating}/5
+              <b>Rating</b> : ⭐{book.rating}/5
             </div>
             <div className="book-ratings-count">
-              <b>Total Ratings</b> : {book.rating_count}
+              <b>Total Ratings</b> : {book.rating_count} votes
+            </div>
+            <div className="book-description">
+              <b>Book-id</b> : {book.description}
             </div>
           </div>
         </div>
       </div>
       <div className="container2">
-        <div className="librarian-title">AI Librarian</div>
-        <div className="chat-area">Chat Area</div>
+        <ChatSection bookTitle={book.title} />
       </div>
     </main>
   );
 }
 
-export default SearchBook;
+export default Book;
