@@ -160,5 +160,5 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://ibdb-ayush.vercel.app/",
+    "https://ibdb-ayush.vercel.app",
 ]
