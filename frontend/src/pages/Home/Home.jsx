@@ -20,6 +20,21 @@ function Home() {
     fetchBooks()
   }, [])
 
+  if (!books) {
+    return (
+      <div className="home-container">
+        <title>IBDB-Internet Book Database</title>
+        <div className="search-box">
+          <SearchBar />
+        </div>
+        <div className="heading-home">Most Popular:</div>
+        <div className="book-list">
+          <h2>Loading...</h2>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="home-container">
       <title>IBDB-Internet Book Database</title>

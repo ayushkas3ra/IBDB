@@ -164,4 +164,5 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://ibdb-ayush.vercel.app/",
+    "http://localhost:5173",
 ]
