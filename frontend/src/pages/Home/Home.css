@@ -28,6 +28,9 @@
   gap: 20px;
   margin: 10px;
 }
+.loading-sign {
+  font-size: x-large;
+}
 .book-card {
   height: 300px;
   width: 200px;
@@ -52,7 +55,7 @@
   .heading-home {
     font-size: x-large;
   }
-  .search-box{
+  .search-box {
     height: 30vh;
   }
 }
@@ -66,7 +69,7 @@
   .heading-home {
     font-size: large;
   }
-   .search-box{
+  .search-box {
     height: 30vh;
   }
 }

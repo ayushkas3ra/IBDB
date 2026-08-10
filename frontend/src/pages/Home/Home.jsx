@@ -29,7 +29,7 @@ function Home() {
         </div>
         <div className="heading-home">Most Popular:</div>
         <div className="book-list">
-          <h2>Loading...</h2>
+          <div className="loading-sign">Loading...</div>
         </div>
       </div>
     )
