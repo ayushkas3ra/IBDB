@@ -3,7 +3,8 @@ set -o errexit
 
 cd ibdb
 
-pip install -r requirements.txt
+python manage.py migrate
+
+python manage.py import_books
 
 python manage.py collectstatic --no-input
-python manage.py migrate
