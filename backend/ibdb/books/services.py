@@ -1,7 +1,6 @@
 from .models import Book
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
-from .loader import df, tfidf_matrix, indices
 from sklearn.metrics.pairwise import cosine_similarity
 
 
@@ -30,6 +29,9 @@ class BookService:
 class RecommendationService:
     @staticmethod
     def recommend_books(isbn13):
+        # to prevent crashing
+        from .loader import df, tfidf_matrix, indices
+
         idx = indices[isbn13]
 
         sim_score = cosine_similarity(tfidf_matrix[idx], tfidf_matrix).flatten()
