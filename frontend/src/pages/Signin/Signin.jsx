@@ -13,8 +13,10 @@ export default function Signin() {
   const navigate = useNavigate()
 
   async function handleLogin(e) {
-    setLoading(true)
     e.preventDefault()
+    console.log('HANDLE LOGIN FIRED')
+    setLoading(true)
+
     try {
       const response = await login({ username, password })
       localStorage.setItem('refresh', response.refresh)
@@ -28,7 +30,7 @@ export default function Signin() {
   }
 
   return (
-    <div className='main-container'>
+    <div className="main-container">
       <title>IBDB: Sign-in</title>
       <div className="signin-card">
         <div className="card-title">Sign-in to your account</div>
