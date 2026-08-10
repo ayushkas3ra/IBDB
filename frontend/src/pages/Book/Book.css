@@ -1,0 +1,129 @@
+.main-container-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.book-outer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 80vh;
+  width: 100%;
+}
+.book-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+}
+.book-title {
+  width: 100%;
+  font-size: xx-large;
+}
+.book-details {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.book-details > img {
+  height: 100%;
+}
+.book-info {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+}
+.book-description {
+  display: none;
+}
+.book-container2 {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading {
+  font-size: x-large;
+}
+.book-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 10px;
+}
+.book-card {
+  height: 300px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 14px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.book-card:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+  background-color: #1a1a1a;
+}
+
+@media screen and (max-width: 1400px) {
+  .book-details {
+    flex-direction: column;
+  }
+  .book-details > img {
+    height: 80%;
+  }
+  .book-details > .book-info {
+    height: 20%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .book-outer {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .book-container1 {
+    width: 100%;
+    height: 50%;
+  }
+  .book-container2 {
+    width: 100%;
+    height: 50%;
+  }
+  .book-title {
+    font-size: x-large;
+  }
+  .book-description {
+    font-size: small;
+  }
+  .book-card {
+    height: 200px;
+    width: 150px;
+    font-size: 12px;
+  }
+  .heading {
+    font-size: x-large;
+  }
+  .book-details {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .book-details > img {
+    height: 100%;
+  }
+}
