@@ -13,7 +13,6 @@ function Book() {
 
   useEffect(() => {
     async function fetchBook() {
-      window.scrollTo(0, 0)
       try {
         // Synchronize both requests
         const [bookData, similarData] = await Promise.all([
@@ -24,6 +23,8 @@ function Book() {
         setSimilarBooks(similarData)
       } catch (error) {
         console.error(error)
+      } finally {
+        window.scrollTo(0, 0)
       }
     }
     fetchBook()
@@ -73,7 +74,7 @@ function Book() {
           </div>
         </div>
         <div className="book-container2">
-          <ChatSection key={isbn13} isbn13={book.isbn13}  />
+          <ChatSection key={isbn13} isbn13={book.isbn13} />
         </div>
       </div>
       <div className="similarBooks-section">

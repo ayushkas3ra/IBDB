@@ -28,12 +28,12 @@ nav {
   text-decoration: underline;
 }
 
-/* .nav-links > button {
-  display: none;
-} */
-
-@media screen and (max-width: 480px) {
-  .nav-links > button {
-    display: inline;
+@media screen and (max-width: 720px) {
+  .nav-links {
+    gap: 5px;
+  }
+  .nav-links > a > span,
+  .nav-links > a > Link {
+    font-size: small;
   }
 }

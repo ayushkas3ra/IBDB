@@ -42,8 +42,13 @@ function Nav() {
             Hello {user.username} <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <Link to="/signin">Sign-in</Link>
+          <Link to="/signin">
+            <span>Signup / Login</span>
+          </Link>
         )}
+        <a href="https://github.com/ayushkas3ra/IBDB" target="_blank">
+          <span>Source Code</span>
+        </a>
       </div>
     </nav>
   )

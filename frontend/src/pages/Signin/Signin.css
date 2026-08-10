@@ -7,6 +7,11 @@
   flex-direction: column;
 }
 
+.error-message {
+  color: red;
+  font-style: italic;
+}
+
 .signin-card {
   height: 450px;
   width: 450px;

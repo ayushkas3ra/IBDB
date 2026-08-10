@@ -9,13 +9,18 @@ export default function Signin() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  // const [error, setError] = useState('')
 
   const navigate = useNavigate()
 
   async function handleLogin(e) {
+    if (!username || !password) {
+      alert('Username or password is empty')
+      return
+    }
     e.preventDefault()
-    console.log('HANDLE LOGIN FIRED')
     setLoading(true)
+    // setError('')
 
     try {
       const response = await login({ username, password })
@@ -24,6 +29,7 @@ export default function Signin() {
       navigate('/')
     } catch (error) {
       console.error(error)
+      alert('Invalid username or password')
     } finally {
       setLoading(false)
     }
@@ -34,12 +40,14 @@ export default function Signin() {
       <title>IBDB: Sign-in</title>
       <div className="signin-card">
         <div className="card-title">Sign-in to your account</div>
+        {/* {error && <p className="error-message">{error}</p>} */}
         <form className="signin-form" onSubmit={handleLogin}>
           <div className="input-group">
             <input
               type="text"
               placeholder="Enter your username"
               onChange={(e) => setUsername(e.target.value)}
+              value={username}
             />
           </div>
           <div className="input-group">
@@ -47,6 +55,7 @@ export default function Signin() {
               type="password"
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
           </div>
           <button className="signin-btn" type="submit" disabled={loading}>

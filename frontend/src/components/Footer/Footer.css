@@ -20,3 +20,13 @@ footer {
 .footer-links > a > span:hover {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 720px) {
+  .footer-links {
+    gap: 5px;
+  }
+  .footer-links > a > span,
+  .footer-links > Link > span {
+    font-size: small;
+  }
+}

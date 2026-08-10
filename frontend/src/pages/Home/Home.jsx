@@ -7,6 +7,7 @@ import { BOOK_PLACEHOLDER } from '@/constants/images'
 
 function Home() {
   const [books, setBooks] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchBooks() {
@@ -15,12 +16,14 @@ function Home() {
         setBooks(books)
       } catch (error) {
         console.error(error)
+      } finally {
+        setLoading(false)
       }
     }
     fetchBooks()
   }, [])
 
-  if (!books) {
+  if (loading) {
     return (
       <div className="home-container">
         <title>IBDB-Internet Book Database</title>

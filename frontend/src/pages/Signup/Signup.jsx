@@ -1,7 +1,7 @@
 import React from 'react'
 import './Signup.css'
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { registerUser } from '@/api/auth'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,12 +12,17 @@ export default function Signup() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  // const [error, setError] = useState('')
 
   const navigate = useNavigate()
 
   async function handleSignin() {
+    if (!name || !email || !username || !password || !confirmPassword) {
+      alert('All fields are required')
+    }
+    // setError('')
     if (password != confirmPassword) {
-      alert('Password does not match with confirm password!')
+      alert('Password does not match with confirm-password!')
       return
     }
     setLoading(true)
@@ -26,6 +31,7 @@ export default function Signup() {
       navigate('/')
     } catch (error) {
       console.error(error)
+      alert('Something went wrong...')
     } finally {
       setLoading(false)
     }
@@ -36,6 +42,7 @@ export default function Signup() {
       <title>IBDB: Sign-up</title>
       <div className="signup-card">
         <div className="card-title">Create a new IBDB account</div>
+        {/* {error && <p className="error-message">{error}</p>} */}
         <form className="signup-form" onSubmit={handleSignin}>
           <div className="input-group">
             {/* <label>Full Name</label> */}
