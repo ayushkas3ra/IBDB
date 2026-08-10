@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     "chatbot",
     "accounts",
     "corsheaders",
-    "restframework",
+    "djangorestframework",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
