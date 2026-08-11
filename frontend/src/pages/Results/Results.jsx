@@ -75,7 +75,6 @@ function Results() {
               <h3>
                 <b>{book.title}</b>
               </h3>
-              <br />
               <p>{book.author}</p>
               <p>{book.genre}</p>
             </div>

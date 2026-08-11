@@ -45,9 +45,9 @@ function Home() {
         <SearchBar />
       </div>
       <div className="heading-home">Most Popular:</div>
-      <div className="book-list">
+      <div className="book-list-home">
         {books.map((book) => (
-          <Link key={book.id} to={`/book/${book.isbn13}`} className="book-card">
+          <Link key={book.id} to={`/book/${book.isbn13}`} className="book-card-home">
             <img src={book.image || BOOK_PLACEHOLDER} alt={book.title} />
             <h3>
               <b>{book.title}</b>

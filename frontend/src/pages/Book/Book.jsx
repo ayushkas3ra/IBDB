@@ -45,7 +45,7 @@ function Book() {
       <div className="book-outer">
         <div className="book-container1">
           <div className="book-title">{book.title}</div>
-          <div className="book-details">
+          <div className="book-details-home">
             <img
               src={
                 book.image ||
@@ -84,7 +84,7 @@ function Book() {
             <Link
               key={similarBook.isbn13}
               to={`/book/${similarBook.isbn13}`}
-              className="book-card"
+              className="book-card-results"
             >
               <img
                 src={similarBook.image || BOOK_PLACEHOLDER}
@@ -93,7 +93,6 @@ function Book() {
               <h3>
                 <b>{similarBook.title}</b>
               </h3>
-              <br />
               <p>{similarBook.author}</p>
               <p>⭐ {similarBook.rating}</p>
               <p>{similarBook.genre}</p>

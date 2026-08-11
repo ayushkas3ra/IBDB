@@ -23,9 +23,16 @@ h2 {
   flex-direction: column;
   padding: 10px;
 }
+.book-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 .book-card {
   height: 300px;
-  width: 200px;
+  width: 150px;
   margin: 10px;
   padding: 10px;
   font-size: 14px;
@@ -33,17 +40,18 @@ h2 {
   scrollbar-width: none;
 }
 
-@media (max-width: 720px) {
-  .book-card {
-    height: 250px;
-    width: 150px;
-  }
+.book-card > img{
+  width: 100%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 720px){
+  .book-list {
+    margin: 5px;
+  }
   .book-card {
-    height: 200px;
-    width: 100px;
+    height: 300px;
+    width: 200px;
+    margin: 5px;
   }
 }
 .book-card:hover {

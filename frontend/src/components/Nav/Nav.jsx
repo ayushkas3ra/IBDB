@@ -46,9 +46,9 @@ function Nav() {
             <span>Signup / Login</span>
           </Link>
         )}
-        <a href="https://github.com/ayushkas3ra/IBDB" target="_blank">
+        {/* <a href="https://github.com/ayushkas3ra/IBDB" target="_blank">
           <span>Source Code</span>
-        </a>
+        </a> */}
       </div>
     </nav>
   )
