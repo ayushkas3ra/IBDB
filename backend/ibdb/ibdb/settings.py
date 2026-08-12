@@ -57,7 +57,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # health check middleware /ping/
     "ibdb.middleware.HealthCheckShortCircuitMiddleware",
+    # rest of middlewares
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",

@@ -5,9 +5,8 @@ class HealthCheckShortCircuitMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        # Intercept the request if it hits the ping URL
         if request.path == '/ping/':
             return HttpResponse("OK", content_type="text/plain", status=200)
             
-        # Continue to other middlewares and URLs for all other pages
+        # Continue to other middlewares
         return self.get_response(request)
