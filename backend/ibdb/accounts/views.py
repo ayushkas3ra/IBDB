@@ -28,3 +28,4 @@ class MeAPIView(APIView):
         user = request.user
         serializer = UserSerializer(user)
         return Response(serializer.data)
+
