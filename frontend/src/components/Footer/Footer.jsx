@@ -7,9 +7,6 @@ function Footer() {
     <footer>
       <div>IBDB: Internet Book DataBase</div>
       <div className="footer-links">
-        <Link to="/signin">
-          <span>Signup / Login</span>
-        </Link>
         <a href="https://github.com/ayushkas3ra/IBDB" target="_blank">
           <span>Source Code</span>
         </a>
