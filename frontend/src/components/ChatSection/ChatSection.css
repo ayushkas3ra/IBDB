@@ -27,6 +27,7 @@
   background-color: rgb(33, 53, 53);
   height: 80%;
   width: 100%;
+  gap: 5px;
 }
 .message-row-receiver {
   display: flex;
