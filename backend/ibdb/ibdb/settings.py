@@ -43,8 +43,6 @@ if render_host:
 
 INSTALLED_APPS = [
     "books",
-    "recommendation",
-    "chatbot",
     "accounts",
     "corsheaders",
     "rest_framework",
