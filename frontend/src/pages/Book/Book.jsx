@@ -5,11 +5,13 @@ import { Link, useParams } from 'react-router-dom'
 import ChatSection from '@/components/ChatSection/ChatSection'
 import { getBook, getSimilarBooks } from '@/api/books'
 import { BOOK_PLACEHOLDER } from '@/constants/images'
+import { ClipLoader } from 'react-spinners'
 
 function Book() {
   const { isbn13 } = useParams()
   const [book, setBook] = useState(null)
   const [similarBooks, setSimilarBooks] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchBook() {
@@ -25,6 +27,7 @@ function Book() {
         console.error(error)
       } finally {
         window.scrollTo(0, 0)
+        setLoading(false)
       }
     }
     fetchBook()
@@ -34,7 +37,7 @@ function Book() {
     return (
       <>
         <main className="book-main">
-          <h2>Loading...</h2>
+          <ClipLoader color="#bbbb" loading={loading} size={50} />
         </main>
       </>
     )

@@ -1,29 +1,30 @@
-import React from "react";
-import "./SearchBook.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import ChatSection from "@/components/ChatSection/ChatSection";
+import React from 'react'
+import './SearchBook.css'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import ChatSection from '@/components/ChatSection/ChatSection'
+import { ClipLoader } from 'react-spinners'
 
 function Book() {
-  const { id } = useParams();
-  const [book, setBook] = useState(null);
+  const { id } = useParams()
+  const [book, setBook] = useState(null)
 
   useEffect(() => {
     axios
       .get(`http://127.0.0.1:5000/search/${id}`)
       .then((res) => setBook(res.data))
-      .catch((err) => console.error(err));
-  }, [id]);
+      .catch((err) => console.error(err))
+  }, [id])
 
   if (!book) {
     return (
       <>
         <main className="book-main">
-          <h2>Loading...</h2>
+          <ClipLoader color="#bbbb" loading={loading} size={50} />
         </main>
       </>
-    );
+    )
   }
 
   return (
@@ -55,7 +56,7 @@ function Book() {
         <ChatSection bookTitle={book.title} />
       </div>
     </main>
-  );
+  )
 }
 
-export default Book;
+export default Book

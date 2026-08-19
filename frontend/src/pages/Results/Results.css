@@ -23,7 +23,12 @@ h2 {
   flex-direction: column;
   padding: 10px;
 }
-.book-list{
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-list {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,11 +45,11 @@ h2 {
   scrollbar-width: none;
 }
 
-.book-card > img{
+.book-card > img {
   width: 100%;
 }
 
-@media (max-width: 720px){
+@media (max-width: 720px) {
   .book-list {
     margin: 5px;
   }

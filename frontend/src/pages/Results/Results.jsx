@@ -5,6 +5,7 @@ import { useSearchParams, Link } from 'react-router-dom'
 import './Results.css'
 import { searchBooks } from '@/api/books'
 import { BOOK_PLACEHOLDER } from '@/constants/images'
+import { ClipLoader } from 'react-spinners'
 
 function Results() {
   const [results, setResults] = useState([])
@@ -34,7 +35,9 @@ function Results() {
         <div className="search-box">
           <SearchBar />
         </div>
-        <h2>Loading...</h2>
+        <div className="loading-spinner">
+          <ClipLoader color="#bbbb" loading={loading} size={50} />
+        </div>
       </>
     )
   }
