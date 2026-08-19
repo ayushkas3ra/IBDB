@@ -46,6 +46,7 @@
 }
 .book-card-home > img {
   width: 100%;
+  animation: growImgHome 1s ease-in-out forwards;
 }
 
 @media (max-width: 720px) {
@@ -63,5 +64,13 @@
   }
   .search-box {
     height: 30vh;
+  }
+}
+@keyframes growImgHome {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

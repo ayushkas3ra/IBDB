@@ -47,6 +47,7 @@ h2 {
 
 .book-card > img {
   width: 100%;
+  animation: growImg 1s ease-in-out forwards;
 }
 
 @media (max-width: 720px) {
@@ -63,4 +64,12 @@ h2 {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
   background-color: #1a1a1a;
+}
+@keyframes growImg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

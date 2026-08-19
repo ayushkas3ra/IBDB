@@ -53,15 +53,18 @@ function Home() {
             to={`/book/${book.isbn13}`}
             className="book-card-home"
           >
-            <img src={book.image || BOOK_PLACEHOLDER} alt={book.title} />
+            <img
+              src={book.image || BOOK_PLACEHOLDER}
+              alt={book.title}
+              loading="lazy"
+            />
             <h3>
-              <b>{book.title}</b>
+              <b>
+                {book.title}-<i>{book.author}</i>
+              </b>
             </h3>
-            <br />
-            <p>{book.author}</p>
             <p>⭐ {book.rating}</p>
             <p>{book.genre}</p>
-            <p>{book.rating_count} votes</p>
           </Link>
         ))}
       </div>

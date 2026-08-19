@@ -32,7 +32,12 @@ function Book() {
       <div className="container1">
         <div className="book-title">{book.title}</div>
         <div className="book-details">
-          <img src={book.image} alt={book.title} className="book-cover" />
+          <img
+            src={book.image}
+            alt={book.title}
+            className="book-cover"
+            loading="lazy"
+          />
           <div className="book-info">
             <div className="book-author">
               <b>Author</b> : {book.author}

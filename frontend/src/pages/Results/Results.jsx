@@ -76,9 +76,11 @@ function Results() {
             <div className="book-card">
               <img src={book.image || BOOK_PLACEHOLDER} alt={book.title} />
               <h3>
-                <b>{book.title}</b>
+                <b>
+                  {book.title}-<i>{book.author}</i>
+                </b>
               </h3>
-              <p>{book.author}</p>
+              <p>⭐ {book.rating}</p>
               <p>{book.genre}</p>
             </div>
           </Link>

@@ -38,6 +38,7 @@
 }
 .book-details-home > img {
   height: 100%;
+  animation: growImg 1s ease-in-out forwards;
 }
 .book-info {
   display: flex;
@@ -86,6 +87,7 @@
 }
 .book-card-results > img {
   width: 100%;
+  animation: growImgBook 1s ease-in-out forwards;
 }
 
 @media (max-width: 1200px) and (min-height: 720px) {
@@ -125,5 +127,13 @@
   .book-info {
     height: 100%;
     width: 100%;
+  }
+}
+@keyframes growImgBook {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

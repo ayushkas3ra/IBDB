@@ -33,13 +33,11 @@ function Book() {
     fetchBook()
   }, [isbn13])
 
-  if (!book) {
+  if (loading) {
     return (
-      <>
-        <main className="book-main">
-          <ClipLoader color="#bbbb" loading={loading} size={50} />
-        </main>
-      </>
+      <main className="book-main">
+        <ClipLoader color="#bbbb" loading={loading} size={50} />
+      </main>
     )
   }
 
@@ -56,6 +54,7 @@ function Book() {
               }
               alt={book.title}
               className="book-cover"
+              loading="lazy"
             />
             <div className="book-info">
               <div className="book-author">
@@ -92,14 +91,15 @@ function Book() {
               <img
                 src={similarBook.image || BOOK_PLACEHOLDER}
                 alt={similarBook.title}
+                loading="lazy"
               />
               <h3>
-                <b>{similarBook.title}</b>
+                <b>
+                  {book.title}-<i>{book.author}</i>
+                </b>
               </h3>
-              <p>{similarBook.author}</p>
-              <p>⭐ {similarBook.rating}</p>
-              <p>{similarBook.genre}</p>
-              <p>{similarBook.rating_count} votes</p>
+              <p>⭐ {book.rating}</p>
+              <p>{book.genre}</p>
             </Link>
           ))}
         </div>
