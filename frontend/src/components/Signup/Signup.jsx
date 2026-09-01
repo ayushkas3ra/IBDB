@@ -1,4 +1,4 @@
-import ImageContainerInfo from '../ImageContainerInfo/ImageContainerinfo'
+import ImageContainerInfo from '../ImageContainerInfo/ImageContainerInfo'
 import './Signup.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
