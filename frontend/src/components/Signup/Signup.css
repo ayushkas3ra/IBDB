@@ -1,0 +1,507 @@
+/* =========================
+   SIGN UP PAGE
+========================= */
+
+.signup-main {
+  width: 100%;
+  min-height: calc(100vh - 68px);
+
+  display: grid;
+  grid-template-columns: 44% 56%;
+
+  background: #050c14;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+/* =========================
+   LEFT IMAGE SECTION
+========================= */
+
+.signup-image-container {
+  position: relative;
+
+  width: 100%;
+  min-height: calc(100vh - 68px);
+
+  background-image: url('../../assets/welcome.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+/* =========================
+   IMAGE DARK OVERLAY
+========================= */
+
+.signup-image-container::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(90deg, rgba(5, 12, 20, 0.2) 0%, rgba(5, 12, 20, 0.48) 100%),
+    linear-gradient(180deg, rgba(5, 12, 20, 0.1) 0%, rgba(5, 12, 20, 0.55) 100%);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.signup-image-container-overlay {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 48px 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  text-align: left;
+}
+
+/* =========================
+   LEFT HEADING
+========================= */
+
+.signup-image-container-overlay > .signup-heading {
+  margin: 0 0 7px;
+
+  color: #f3f5f7;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.signup-image-container-overlay .signup-heading span {
+  color: #ffc107;
+}
+
+/* =========================
+   LEFT SUBHEADING
+========================= */
+
+.signup-subheading {
+  max-width: 300px;
+
+  margin: 0 0 30px;
+
+  color: #d1d8df;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   LEFT INFORMATION
+========================= */
+
+.signup-image-container-information {
+  width: 100%;
+  max-width: 330px;
+}
+
+/*
+  ImageContainerInfo itself does not
+  control the background.
+*/
+
+.signup-image-container-information .image-container-info-main {
+  width: 100%;
+
+  padding: 0;
+
+  background: transparent;
+
+  gap: 22px;
+}
+
+/* =========================
+   RIGHT FORM SECTION
+========================= */
+
+.signup-form-container {
+  width: 100%;
+  min-height: calc(100vh - 68px);
+
+  padding: 40px 55px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background: #050c14;
+}
+
+/* =========================
+   FORM HEADER
+========================= */
+
+.signup-container1 {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto 0;
+}
+
+.signup-form-container .signup-container1 .signup-heading {
+  margin: 0 0 7px;
+
+  color: #f1f4f7;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.signup-paragraph {
+  margin: 0;
+
+  color: #aeb8c4;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   FORM CONTAINER
+========================= */
+
+.signup-container2 {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 27px auto 0;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.signup-form {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px 10px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.signup-form input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  background: #1a2531;
+
+  border: 1px solid #283542;
+  border-radius: 6px;
+
+  outline: none;
+
+  color: #f1f4f7;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.signup-form input::placeholder {
+  color: #818c99;
+}
+
+.signup-form input:hover {
+  border-color: #344454;
+}
+
+.signup-form input:focus {
+  border-color: #ffc107;
+
+  background: #1d2935;
+
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.07);
+}
+
+/* =========================
+   SIGN UP BUTTON
+========================= */
+
+.signup-btn {
+  width: 100%;
+  height: 48px;
+
+  grid-column: 1 / -1;
+
+  margin-top: 3px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #ffc107;
+
+  color: #101820;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.signup-btn:hover {
+  background: #ffca28;
+
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.15);
+}
+
+.signup-btn:active {
+  transform: scale(0.985);
+}
+
+/* =========================
+   SIGN IN REDIRECT
+========================= */
+
+.signup-container3 {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 25px auto 0;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.signup-question {
+  color: #8f9aa7;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+.signup-redirect-btn {
+  margin-left: 4px;
+
+  color: #ffc107;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: color 0.2s ease;
+}
+
+.signup-redirect-btn:hover {
+  color: #ffca28;
+
+  text-decoration: underline;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .signup-main {
+    grid-template-columns: 42% 58%;
+  }
+
+  .signup-image-container-overlay {
+    padding: 40px 28px;
+  }
+
+  .signup-image-container-overlay > .signup-heading {
+    font-size: 25px;
+  }
+
+  .signup-subheading {
+    font-size: 13px;
+  }
+
+  .signup-image-container-information {
+    max-width: 300px;
+  }
+
+  .signup-form-container {
+    padding: 35px;
+  }
+}
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 800px) {
+  .signup-main {
+    grid-template-columns: 40% 60%;
+  }
+
+  .signup-image-container-overlay {
+    padding: 35px 22px;
+  }
+
+  .signup-image-container-overlay > .signup-heading {
+    font-size: 23px;
+  }
+
+  .signup-subheading {
+    max-width: 250px;
+
+    font-size: 12px;
+  }
+
+  .signup-form-container {
+    padding: 30px 25px;
+  }
+
+  .signup-form-container .signup-container1 .signup-heading {
+    font-size: 23px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  /*
+    Hide the image completely.
+    Only the signup form remains.
+  */
+
+  .signup-image-container {
+    display: none;
+  }
+
+  /*
+    Signup page becomes a single
+    full-width column.
+  */
+
+  .signup-main {
+    display: block;
+
+    width: 100%;
+    min-height: calc(100vh - 68px);
+
+    overflow: visible;
+  }
+
+  .signup-form-container {
+    width: 100%;
+    min-height: calc(100vh - 68px);
+
+    padding: 40px 25px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+  }
+
+  .signup-container1,
+  .signup-container2,
+  .signup-container3 {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .signup-form-container .signup-container1 .signup-heading {
+    font-size: 23px;
+  }
+
+  .signup-paragraph {
+    font-size: 12px;
+  }
+
+  .signup-container2 {
+    margin-top: 23px;
+  }
+
+  /*
+    Stack all inputs on mobile.
+  */
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .signup-form input,
+  .signup-btn {
+    height: 46px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+  .signup-form-container {
+    padding: 30px 18px;
+  }
+
+  .signup-form-container .signup-container1 .signup-heading {
+    font-size: 22px;
+  }
+
+  .signup-question {
+    font-size: 12px;
+  }
+}

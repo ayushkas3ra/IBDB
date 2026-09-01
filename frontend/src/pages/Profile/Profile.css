@@ -1,0 +1,678 @@
+.profile-main-loading{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-main {
+  width: 100%;
+  min-height: calc(100vh - 68px);
+  display: flex;
+  background: #050c14;
+  color: #ffffff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.profile-sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: calc(100vh - 68px);
+  background: #07111a;
+  border-right: 1px solid #182630;
+  padding: 28px 14px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.profile-sidebar-linksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profile-sidebar-link {
+  height: 54px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #d6dbe1;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s ease;
+  box-sizing: border-box;
+}
+
+.profile-sidebar-link:hover {
+  background: #111d27;
+  color: #ffffff;
+}
+
+.profile-sidebar-link.active {
+  background: #111d27;
+  color: #ffd000;
+  border-left: 3px solid #ffd000;
+  padding-left: 17px;
+}
+
+.profile-sidebar-link-SVG {
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-sidebar-link-SVG svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.profile-sidebar-link.active {
+  margin-top: 25px;
+  border-top: 1px solid #1b2934;
+  border-radius: 0;
+  padding-top: 25px;
+  height: 80px;
+}
+
+.profile-sidebar-closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.profile-sidebar-closeBtn svg {
+  width: 20px;
+  height: 20px;
+  fill: #9da8b2;
+  transition: 0.2s ease;
+}
+
+.profile-sidebar-closeBtn:hover svg {
+  fill: #ffd000;
+}
+
+.profile-sidebar-openBtn {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  z-index: 10;
+  cursor: pointer;
+  background: #101c26;
+  border: 1px solid #263541;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-sidebar-openBtn svg {
+  width: 21px;
+  height: 21px;
+  fill: #ffffff;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.profile-container {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   PROFILE DETAILS
+========================= */
+
+.profile-details {
+  width: 100%;
+  background: #08131d;
+  border: 1px solid #182936;
+  border-radius: 9px;
+  padding: 25px 28px;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.profile-details-title {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.profile-details-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-details-container-avatar {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d9d9d9;
+  border: 1px solid #26343f;
+}
+
+.profile-details-container-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details-container-user {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-details-continer-user-fullName {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.profile-details-container-user-editProfileBtn {
+  color: #ffd000;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.profile-details-container-user-editProfileBtn:hover {
+  color: #ffffff;
+}
+
+.profile-details-continer-user-username {
+  color: #9ba6af;
+  font-size: 14px;
+}
+
+.profile-details-continer-user-bio {
+  max-width: 600px;
+  color: #d4d9de;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 5px;
+}
+
+.profile-details-continer-user-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b9c2ca;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.profile-details-continer-user-location-SVG {
+  width: 17px;
+  height: 17px;
+  display: flex;
+}
+
+.profile-details-continer-user-location-SVG svg {
+  width: 17px;
+  height: 17px;
+  fill: #aeb8c1;
+}
+
+/* =========================
+   SAVED BOOKS / MY LISTS
+========================= */
+
+.profile-mySavedBooks-container {
+  width: 100%;
+}
+
+.profile-mySavedBooks {
+  width: 100%;
+  background: #08131d;
+  border: 1px solid #182936;
+  border-radius: 9px;
+  padding: 25px 28px;
+  box-sizing: border-box;
+}
+
+.profile-mySavedBooks-list {
+  width: 100%;
+}
+
+.profile-mySavedBooks-titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profile-mySavedBooks-titleContainer-heading {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.profile-mySavedBooks-titleContainer-viewAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffd000;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.profile-mySavedBooks-titleContainer-viewAllBtn:hover {
+  color: #ffffff;
+}
+
+.profile-mySavedBooks-titleContainer-viewAllBtn-arrow {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-mySavedBooks-titleContainer-viewAllBtn-arrow svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* =========================
+   BOOK CARDS
+========================= */
+
+.profile-mySavedBooks-bookCard {
+  width: 100%;
+  min-height: 145px;
+  display: flex;
+  gap: 20px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #0b1721;
+  border: 1px solid #1b2b38;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.profile-mySavedBooks-bookCard:hover {
+  border-color: #354652;
+  background: #0e1b26;
+  transform: translateY(-2px);
+}
+
+.profile-mySavedBooks-bookCard-img {
+  width: 85px;
+  min-width: 85px;
+  height: 118px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #111c25;
+}
+
+.profile-mySavedBooks-bookCard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-mySavedBooks-bookCard-bookinfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.profile-mySavedBooks-bookCard-booktitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.profile-mySavedBooks-bookCard-bookratings {
+  color: #ffd000;
+  font-size: 14px;
+}
+
+.profile-mySavedBooks-bookCard-bookgenre {
+  color: #929da6;
+  font-size: 13px;
+}
+
+.profile-mySavedBooks-empty {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #89949d;
+  background: #08131d;
+  border: 1px solid #182936;
+  border-radius: 9px;
+}
+
+/* =========================
+   NO USER
+========================= */
+
+.profile-noUser-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.profile-noUser-signinBtn,
+.profile-noUser-backToHomeBtn {
+  text-decoration: none;
+}
+
+.profile-noUser-signinBtn {
+  padding: 12px 28px;
+  background: #ffd000;
+  color: #050c14;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.profile-noUser-backToHomeBtn {
+  color: #c6cdd3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-noUser-backToHomeBtn-arrow {
+  width: 18px;
+  height: 18px;
+}
+
+.profile-noUser-backToHomeBtn-arrow svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .profile-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .profile-container {
+    padding: 22px;
+  }
+
+  .profile-details {
+    padding: 22px;
+  }
+
+  .profile-details-container {
+    gap: 22px;
+  }
+
+  .profile-details-container-avatar {
+    width: 125px;
+    height: 125px;
+  }
+
+  .profile-details-continer-user-fullName {
+    font-size: 23px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .profile-main {
+    min-height: calc(100vh - 60px);
+    display: block;
+  }
+
+   .profile-sidebar-openBtn {
+    display: flex;
+    position: fixed;
+    top: 75px;
+    left: 15px;
+    width: 42px;
+    height: 42px;
+    background: #101c26;
+    border: 1px solid #263541;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .profile-sidebar-openBtn svg {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+  }
+
+  .profile-sidebar-openBtn:hover svg {
+    fill: #ffd000;
+  }
+
+}
+
+  .profile-container {
+    width: 100%;
+    padding: 18px 14px 30px;
+    gap: 18px;
+  }
+
+  /* PROFILE */
+
+  .profile-details {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .profile-details-title {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .profile-details-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 17px;
+  }
+
+  .profile-details-container-avatar {
+    width: 125px;
+    height: 125px;
+  }
+
+  .profile-details-container-user {
+    width: 100%;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .profile-details-continer-user-fullName {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 22px;
+  }
+
+  .profile-details-container-user-editProfileBtn {
+    font-size: 12px;
+  }
+
+  .profile-details-continer-user-username {
+    font-size: 13px;
+  }
+
+  .profile-details-continer-user-bio {
+    width: 100%;
+    max-width: 330px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .profile-details-continer-user-location {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  /* MY LISTS */
+
+  .profile-mySavedBooks {
+    padding: 19px 15px;
+    border-radius: 10px;
+  }
+
+  .profile-mySavedBooks-titleContainer {
+    margin-bottom: 16px;
+  }
+
+  .profile-mySavedBooks-titleContainer-heading {
+    font-size: 20px;
+  }
+
+  .profile-mySavedBooks-titleContainer-viewAllBtn {
+    font-size: 12px;
+  }
+
+  .profile-mySavedBooks-bookCard {
+    min-height: 105px;
+    padding: 10px;
+    gap: 13px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .profile-mySavedBooks-bookCard-img {
+    width: 65px;
+    min-width: 65px;
+    height: 88px;
+  }
+
+  .profile-mySavedBooks-bookCard-bookinfoContainer {
+    gap: 5px;
+  }
+
+  .profile-mySavedBooks-bookCard-booktitle {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .profile-mySavedBooks-bookCard-bookratings {
+    font-size: 12px;
+  }
+
+  .profile-mySavedBooks-bookCard-bookgenre {
+    font-size: 11px;
+  }
+
+  /* NO USER */
+
+  .profile-noUser-title {
+    font-size: 19px;
+    padding: 0 20px;
+    line-height: 1.5;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+  .profile-container {
+    padding: 14px 10px 25px;
+  }
+
+  .profile-details {
+    padding: 18px 13px;
+    
+  }
+
+  .profile-details-container-avatar {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profile-details-continer-user-fullName {
+    font-size: 20px;
+  }
+
+  .profile-details-continer-user-bio {
+    max-width: 290px;
+    font-size: 12px;
+  }
+
+  .profile-mySavedBooks {
+    padding: 17px 12px;
+  }
+
+  .profile-mySavedBooks-titleContainer-heading {
+    font-size: 18px;
+  }
+
+  .profile-mySavedBooks-bookCard-img {
+    width: 58px;
+    min-width: 58px;
+    height: 80px;
+  }
+
+  .profile-mySavedBooks-bookCard-booktitle {
+    font-size: 13px;
+  }
+
+  .profile-mySavedBooks-bookCard-bookratings {
+    font-size: 11px;
+  }
+
+  .profile-mySavedBooks-bookCard-bookgenre {
+    font-size: 10px;
+  }
+}

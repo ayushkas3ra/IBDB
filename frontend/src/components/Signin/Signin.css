@@ -1,0 +1,444 @@
+/* =========================
+   SIGN IN PAGE
+========================= */
+
+.signin-main {
+  width: 100%;
+  min-height: calc(100vh - 68px);
+
+  display: grid;
+  grid-template-columns: 44% 56%;
+
+  background: #050c14;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+/* =========================
+   LEFT IMAGE CONTAINER
+========================= */
+
+.signin-image-container {
+  position: relative;
+
+  width: 100%;
+  min-height: calc(100vh - 68px);
+
+  background-image: url('../../assets/welcome.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+/* Dark overlay */
+
+.signin-image-container::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(90deg, rgba(5, 12, 20, 0.2) 0%, rgba(5, 12, 20, 0.42) 100%),
+    linear-gradient(180deg, rgba(5, 12, 20, 0.1) 0%, rgba(5, 12, 20, 0.55) 100%);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.signin-image-container-overlay {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 48px 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   LEFT HEADING
+========================= */
+
+.signin-image-container .signin-heading {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.signin-image-container .signin-heading span {
+  color: #ffc107;
+}
+
+/* =========================
+   LEFT SUBHEADING
+========================= */
+
+.signin-subheading {
+  max-width: 300px;
+
+  margin: 0 0 30px;
+
+  color: #d0d5db;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   INFORMATION
+========================= */
+
+.signin-image-container-information {
+  width: 100%;
+  max-width: 330px;
+}
+
+/* =========================
+   RIGHT FORM CONTAINER
+========================= */
+
+.signin-form-container {
+  width: 100%;
+  min-height: calc(100vh - 68px);
+
+  padding: 40px 55px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: #050c14;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   FORM CONTENT WIDTH
+========================= */
+
+.signin-form-container > div {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* =========================
+   FORM HEADER
+========================= */
+
+.signin-container1 {
+  margin-bottom: 27px;
+
+  text-align: left;
+}
+
+.signin-form-container .signin-heading {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.signin-paragraph {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.signin-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.signin-form input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 15px;
+
+  border: 1px solid #263342;
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #1a2531;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.signin-form input::placeholder {
+  color: #7d8794;
+}
+
+.signin-form input:hover {
+  border-color: #344454;
+}
+
+.signin-form input:focus {
+  border-color: #ffc107;
+
+  background: #1c2936;
+
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.08);
+}
+
+/* =========================
+   SIGN IN BUTTON
+========================= */
+
+.signin-btn {
+  width: 100%;
+  height: 48px;
+
+  margin-top: 3px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #ffc107;
+  color: #080d13;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.signin-btn:hover {
+  background: #ffca28;
+
+  box-shadow: 0 4px 14px rgba(255, 193, 7, 0.18);
+}
+
+.signin-btn:active {
+  transform: scale(0.985);
+}
+
+/* =========================
+   SIGN UP CONTAINER
+========================= */
+
+.signin-container3 {
+  margin-top: 25px;
+
+  text-align: center;
+}
+
+.signin-question {
+  color: #8f99a5;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signup-redirect-btn {
+  margin-left: 4px;
+
+  color: #ffc107;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.signup-redirect-btn:hover {
+  color: #ffca28;
+
+  text-decoration: underline;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .signin-main {
+    grid-template-columns: 42% 58%;
+  }
+
+  .signin-image-container-overlay {
+    padding: 40px 28px;
+  }
+
+  .signin-form-container {
+    padding: 35px 35px;
+  }
+
+  .signin-image-container .signin-heading {
+    font-size: 25px;
+  }
+
+  .signin-subheading {
+    font-size: 13px;
+  }
+
+  .signin-image-container-information {
+    max-width: 300px;
+  }
+}
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 800px) {
+  .signin-main {
+    grid-template-columns: 40% 60%;
+  }
+
+  .signin-image-container-overlay {
+    padding: 35px 22px;
+  }
+
+  .signin-form-container {
+    padding: 30px 25px;
+  }
+
+  .signin-image-container .signin-heading {
+    font-size: 23px;
+  }
+
+  .signin-subheading {
+    max-width: 250px;
+
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  /*
+    Completely remove the image section.
+  */
+
+  .signin-image-container {
+    display: none;
+  }
+
+  /*
+    Form becomes full width.
+  */
+
+  .signin-main {
+    display: block;
+
+    width: 100%;
+    min-height: calc(100vh - 68px);
+
+    overflow: visible;
+  }
+
+  .signin-form-container {
+    width: 100%;
+    min-height: calc(100vh - 68px);
+
+    padding: 40px 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signin-form-container > div {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+  .signin-form-container {
+    padding: 30px 18px;
+  }
+
+  .signin-container1 {
+    margin-bottom: 23px;
+  }
+
+  .signin-form-container .signin-heading {
+    font-size: 23px;
+  }
+
+  .signin-paragraph {
+    font-size: 12px;
+  }
+
+  .signin-form input,
+  .signin-btn {
+    height: 46px;
+  }
+
+  .signin-question {
+    font-size: 12px;
+  }
+}

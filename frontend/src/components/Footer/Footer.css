@@ -1,32 +1,390 @@
-footer {
-  min-height: 20vh;
+/* =========================
+   FOOTER
+========================= */
+
+.footer-main {
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #080f18;
+  color: #dce2e8;
+
+  border-top: 1px solid #26313d;
+}
+
+
+/* =========================
+   DESKTOP FOOTER
+========================= */
+
+.footer-container1 {
+  width: 100%;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  background-color: rgb(24, 24, 24);
+  justify-content: space-between;
+
+  padding: 38px 50px;
+
+  box-sizing: border-box;
 }
+
+
+/* =========================
+   LOGO
+========================= */
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.footer-logo img {
+  width: 82px;
+  height: 82px;
+
+  object-fit: contain;
+}
+
+
+.footer-title {
+  color: #e9edf2;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   FOOTER NAVIGATION
+========================= */
+
+.footer-btns {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+
+.footer-link-btn {
+  color: #b9c1cb;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.footer-link-btn:hover {
+  color: #ffd21f;
+}
+
+
+/* ACTIVE DESKTOP LINK */
+
+.footer-link-btn.active {
+  color: #ffd21f;
+}
+
+
+/* =========================
+   SOCIAL LINKS
+========================= */
 
 .footer-links {
   display: flex;
   align-items: center;
+
+  gap: 12px;
+}
+
+
+.footer-links a {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+
+  border-radius: 50%;
+
+  background-color: #111a25;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.footer-links > a > span:hover {
-  text-decoration: underline;
+
+.footer-links a:hover {
+  background-color: #ffd21f;
+
+  transform: translateY(-2px);
 }
 
-@media screen and (max-width: 720px) {
-  .footer-links {
-    gap: 5px;
+
+.footer-links svg {
+  width: 17px;
+  height: 17px;
+
+  fill: #dce2e8;
+
+  transition:
+    fill 0.2s ease;
+}
+
+
+.footer-links a:hover svg {
+  fill: #080f18;
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.footer-container2 {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 20px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid #1d2834;
+
+  color: #737e8a;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE FOOTER
+========================= */
+
+.footer-mobile {
+  display: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .footer-container1 {
+    padding: 32px 30px;
+
+    gap: 30px;
   }
-  .footer-links > a > span,
-  .footer-links > Link > span {
-    font-size: small;
+
+
+  .footer-btns {
+    gap: 18px;
+  }
+
+
+  .footer-links {
+    gap: 8px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  /* =========================
+     HIDE DESKTOP FOOTER
+  ========================= */
+
+  .footer-container1,
+  .footer-container2 {
+    display: none;
+  }
+
+
+  /* =========================
+     MOBILE FOOTER
+  ========================= */
+
+  .footer-mobile {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background-color: #080f18;
+
+    border-top: 1px solid #26313d;
+
+    z-index: 1000;
+
+    box-shadow:
+      0 -5px 20px rgba(0, 0, 0, 0.25);
+  }
+
+
+  /* =========================
+     MOBILE NAVIGATION
+  ========================= */
+
+  .footer-mobile-btns {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    align-items: center;
+  }
+
+
+  /* =========================
+     MOBILE NAV LINKS
+  ========================= */
+
+  .footer-mobile-btns a {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #8995a2;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+
+  /* =========================
+     HOVER
+  ========================= */
+
+  .footer-mobile-btns a:hover {
+    color: #ffd21f;
+
+    background-color:
+      rgba(255, 210, 31, 0.05);
+  }
+
+
+  /* =========================
+     ACTIVE LINK
+  ========================= */
+
+  .footer-mobile-btns a.active {
+    color: #ffd21f;
+  }
+
+
+  .footer-mobile-btns a.active svg {
+    fill: #ffd21f;
+  }
+
+
+  /* =========================
+     ICON
+  ========================= */
+
+  .footer-mobile-btns svg {
+    width: 25px;
+    height: 25px;
+
+    fill: #dce2e8;
+
+    transition:
+      fill 0.2s ease;
+  }
+
+
+  /* =========================
+     ACTIVE ICON
+  ========================= */
+
+  .footer-mobile-btns a.active
+  .footer-mobile-iconbox
+  svg {
+    fill: #ffd21f;
+  }
+
+
+  /* =========================
+     ICON + TEXT
+  ========================= */
+
+  .footer-mobile-iconbox {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 3px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .footer-mobile {
+    height: 60px;
+  }
+
+
+  .footer-mobile-btns a {
+    font-size: 11px;
+  }
+
+
+  .footer-mobile-btns svg {
+    width: 23px;
+    height: 23px;
   }
 }

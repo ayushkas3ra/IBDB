@@ -1,0 +1,97 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-main {
+  width: 100%;
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  padding: 60px 24px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(rgba(5, 12, 20, 0.72), rgba(5, 12, 20, 0.82)),
+    url('../../assets/herobackground.jpg') center / cover no-repeat;
+
+  color: #ffffff;
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero-main .hero-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+}
+
+/* =========================
+   HERO SUBTITLE
+========================= */
+
+.hero-main .hero-subtitle {
+  max-width: 650px;
+
+  margin-top: 20px;
+
+  color: #b9c1cb;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* =========================
+   SEARCH BAR PLACEHOLDER
+========================= */
+
+.hero-main > div:last-child {
+  width: min(700px, 100%);
+
+  margin-top: 32px;
+
+  color: #ffffff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .hero-main {
+    min-height: 250px;
+    padding: 50px 20px;
+  }
+
+  .hero-main .hero-title {
+    font-size: 38px;
+    line-height: 1.15;
+  }
+
+  .hero-main .hero-subtitle {
+    max-width: 500px;
+
+    margin-top: 16px;
+
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-main > div:last-child {
+    margin-top: 26px;
+  }
+}

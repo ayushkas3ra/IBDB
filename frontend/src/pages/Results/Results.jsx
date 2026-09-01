@@ -1,13 +1,12 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import SearchBar from '@/components/SearchBar/SearchBar'
-import { useSearchParams, Link } from 'react-router-dom'
 import './Results.css'
-import { searchBooks } from '@/api/books'
-import { BOOK_PLACEHOLDER } from '@/constants/images'
+import { searchBooks } from '../../api/books'
+import { useState, useEffect } from 'react'
+import { useSearchParams, Link } from 'react-router-dom'
+import SearchBar from '../../components/SearchBar/SearchBar'
+import { BOOK_PLACEHOLDER } from '../../constants/images'
 import { ClipLoader } from 'react-spinners'
 
-function Results() {
+export default function Results() {
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -21,7 +20,7 @@ function Results() {
         const results = await searchBooks(query)
         setResults(results)
       } catch (error) {
-        console.error(error)
+        setError(error)
       } finally {
         setLoading(false)
       }
@@ -29,59 +28,92 @@ function Results() {
     fetchResults()
   }, [query])
 
+  function formatCount(count) {
+    if (count >= 1_000_000) {
+      return `${parseFloat((count / 1_000_000).toFixed(1))}m`
+    }
+    if (count >= 1_000) {
+      return `${parseFloat((count / 1_000).toFixed(1))}k`
+    }
+    return count.toString()
+  }
+
   if (loading) {
     return (
-      <>
-        <div className="search-box">
+      <div className="results-main">
+        <title>IBDB - Results</title>
+        <div className="results-container1">
+          <div className="results-title">Search results for </div>
           <SearchBar />
         </div>
-        <div className="loading-spinner">
+        <div className="results-container2">
           <ClipLoader color="#bbbb" loading={loading} size={50} />
         </div>
-      </>
+      </div>
     )
   }
 
   if (error) {
     return (
-      <>
-        <div className="search-box">
+      <div className="results-main">
+        <title>IBDB - Results</title>
+        <div className="results-container1">
+          <div className="results-title">Search results for </div>
           <SearchBar />
         </div>
-        <h2>{error}</h2>
-      </>
+        <div className="results-container2">{error}</div>
+      </div>
     )
   }
 
   if (results.length == 0) {
     return (
-      <>
-        <div className="search-box">
+      <div className="results-main">
+        <title>IBDB - Results</title>
+        <div className="results-container1">
+          <div className="results-title">Search results for </div>
           <SearchBar />
         </div>
-        <h2>Book not found in database, try with a different query</h2>
-      </>
+        <div className="results-container2">
+          <h2>Book not found in database, try with a different query</h2>
+        </div>
+      </div>
     )
   }
 
   return (
-    <div className="results-page">
-      <div className="search-box">
+    <div className="results-main">
+      <title>IBDB - Results</title>
+      <div className="results-container1">
+        <div className="results-title">
+          Search results for <span>"{query}"</span>
+        </div>
         <SearchBar />
       </div>
-      <div className="heading-results">Results :</div>
-      <div className="book-list">
+      <div className="results-container2">
         {results.map((book) => (
-          <Link to={`/book/${book.isbn13}/`} key={book.isbn13}>
-            <div className="book-card">
-              <img src={book.image || BOOK_PLACEHOLDER} alt={book.title} />
-              <h3>
-                <b>
-                  {book.title}-<i>{book.author}</i>
-                </b>
-              </h3>
-              <p>⭐ {book.rating}</p>
-              <p>{book.genre}</p>
+          <Link
+            to={`/book/${book.isbn13}/`}
+            key={`/book/${book.isbn13}`}
+            className="results-bookCard"
+          >
+            <div className="results-bookCard-imageContainer">
+              <img
+                className="results-bookCard-image"
+                src={book.image || BOOK_PLACEHOLDER}
+                alt={book.title}
+              />
+            </div>
+            <div className="results-bookCard-bookInfo">
+              <div className="results-bookCard-bookTitle">{book.title}</div>
+              <div className="results-bookCard-bookAuthor">{book.author}</div>
+              <div className="results-bookCard-bookRatings">
+                ⭐{book.rating} ({formatCount(book.rating_count)} votes)
+              </div>
+              <div className="results-bookCard-bookGenre">{book.genre}</div>
+              <div className="results-bookCard-bookDescription">
+                {book.description}
+              </div>
             </div>
           </Link>
         ))}
@@ -89,5 +121,3 @@ function Results() {
     </div>
   )
 }
-
-export default Results

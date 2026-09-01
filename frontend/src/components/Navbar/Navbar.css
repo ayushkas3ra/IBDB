@@ -1,0 +1,298 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.nav-main {
+  position: relative;
+
+  width: 100%;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+  box-sizing: border-box;
+
+  background-color: #080f18;
+  border-bottom: 1px solid #26313d;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.nav-container1 {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  width: 82px;
+  height: 82px;
+
+  object-fit: contain;
+}
+
+.nav-title {
+  color: #e9edf2;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   CENTER
+========================= */
+
+.nav-container2 {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
+}
+
+.nav-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+
+  color: #dce2e8;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffd21f;
+}
+
+/* =========================
+   ACTIVE NAV LINK
+========================= */
+
+.nav-link.active {
+  color: #ffd21f;
+}
+
+.nav-link.active::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 3px;
+
+  height: 3px;
+
+  background-color: #ffd21f;
+
+  border-radius: 3px;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.nav-container3 {
+  position: relative;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.nav-btn svg {
+  width: 21px;
+  height: 21px;
+
+  fill: #f1f4f7;
+
+  transition:
+    fill 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-btn:hover svg {
+  fill: #ffd21f;
+  transform: scale(1.08);
+}
+
+/* =========================
+   NAVBAR SEARCH
+========================= */
+
+.nav-searchbar {
+  position: absolute;
+
+  top: 58px;
+  right: 0;
+
+  width: 360px;
+
+  z-index: 100;
+}
+
+/*
+   The current SearchBar is designed
+   for the HERO, so override its width
+   when it is temporarily used here.
+*/
+
+.nav-searchbar .searchbar-main {
+  width: 100%;
+}
+
+.nav-searchbar .searchbar-form {
+  width: 100%;
+  height: 48px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.nav-searchbar .searchbar-searchicon {
+  width: 18px;
+  height: 18px;
+}
+
+.nav-searchbar .searchbar-btn {
+  height: 38px;
+
+  padding: 0 18px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.nav-profile {
+  height: auto;
+
+  padding: 8px 10px;
+
+  border-radius: 6px;
+}
+.nav-signin {
+  background-color: #ffd21f;
+  color: #080f18;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 0 5px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.nav-signin:hover {
+  background: #ffca28;
+
+  box-shadow: 0 4px 14px rgba(255, 193, 7, 0.18);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .nav-main {
+    padding: 0 20px;
+  }
+
+  .nav-container2 {
+    gap: 22px;
+  }
+
+  .nav-title {
+    display: none;
+  }
+
+  .nav-searchbar {
+    width: 320px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .nav-main {
+    height: 64px;
+
+    padding: 0 16px;
+  }
+
+  .nav-title {
+    font-size: 12px;
+  }
+
+  /* Hide desktop links */
+
+  .nav-container2 {
+    display: none;
+  }
+
+  /* Right side */
+
+  .nav-container3 {
+    flex: 0;
+  }
+
+  /* Navbar search */
+
+  .nav-searchbar {
+    position: fixed;
+
+    top: 64px;
+    left: 16px;
+    right: 16px;
+
+    width: auto;
+  }
+}
+
+.nav-signin{
+  font-size: 12px;
+}

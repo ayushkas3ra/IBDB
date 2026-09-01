@@ -1,0 +1,314 @@
+/* =========================
+   404 PAGE
+========================= */
+
+.comingSoon-main {
+  width: 100%;
+  min-height: calc(100vh - 68px);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background-color: #050c14;
+  color: #ffffff;
+}
+
+/* =========================
+   LEFT — IMAGE
+========================= */
+
+.container1 {
+  min-height: 500px;
+
+  background-image:
+    linear-gradient(to right, rgba(5, 12, 20, 0.15), rgba(5, 12, 20, 0.85)),
+    url('../../assets/404.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   RIGHT — CONTENT
+========================= */
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 60px 70px;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   404 HEADING
+========================= */
+
+.comingSoon-heading {
+  margin: 0;
+
+  color: #ffd21f;
+
+  font-size: clamp(80px, 10vw, 140px);
+  font-weight: 700;
+
+  line-height: 0.9;
+  letter-spacing: -5px;
+}
+
+/* =========================
+   SUB HEADING
+========================= */
+
+.comingSoon-subHeading {
+  margin-top: 20px;
+
+  color: #f1f4f7;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.comingSoon-paragraph {
+  max-width: 480px;
+
+  margin-top: 18px;
+
+  color: #aeb8c4;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================
+   BACK HOME BUTTON
+========================= */
+
+.comingSoon-home-btn {
+  min-width: 180px;
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 28px;
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  background-color: #ffd21f;
+
+  border-radius: 7px;
+
+  color: #101820;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.comingSoon-home-btn:hover {
+  background-color: #ffdc4a;
+
+  transform: translateY(-2px);
+}
+
+.comingSoon-home-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   ARROWS
+========================= */
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow svg {
+  width: 17px;
+  height: 17px;
+
+  fill: currentColor;
+}
+
+/* =========================
+   BROWSE BOOKS
+========================= */
+
+.comingSoon-browseBooks-btn {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  color: #ffd21f;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.comingSoon-browseBooks-btn:hover {
+  color: #ffdf55;
+}
+
+.comingSoon-browseBooks-btn .rightArrow svg {
+  transition: transform 0.2s ease;
+}
+
+.comingSoon-browseBooks-btn:hover .rightArrow svg {
+  transform: translateX(4px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .comingSoon-main {
+    grid-template-columns: 45% 55%;
+  }
+
+  .container2 {
+    padding: 50px 40px;
+  }
+
+  .comingSoon-heading {
+    font-size: 90px;
+  }
+
+  .comingSoon-subHeading {
+    font-size: 25px;
+  }
+
+  .comingSoon-paragraph {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .comingSoon-main {
+    min-height: calc(100vh - 64px);
+
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 64px;
+  }
+
+  /* =========================
+     IMAGE
+  ========================= */
+
+  .container1 {
+    width: 100%;
+    height: 270px;
+    min-height: 270px;
+
+    flex-shrink: 0;
+
+    background-image:
+      linear-gradient(to bottom, rgba(5, 12, 20, 0.05), rgba(5, 12, 20, 0.9)),
+      url('../../assets/404.png');
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* =========================
+     CONTENT
+  ========================= */
+
+  .container2 {
+    width: 100%;
+
+    align-items: center;
+
+    padding: 25px 24px 45px;
+
+    text-align: center;
+  }
+
+  /* =========================
+     404
+  ========================= */
+
+  .comingSoon-heading {
+    font-size: 78px;
+
+    letter-spacing: -3px;
+  }
+
+  /* =========================
+     SUBHEADING
+  ========================= */
+
+  .comingSoon-subHeading {
+    margin-top: 12px;
+
+    font-size: 24px;
+  }
+
+  /* =========================
+     DESCRIPTION
+  ========================= */
+
+  .comingSoon-paragraph {
+    max-width: 330px;
+
+    margin-top: 14px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  /* =========================
+     HOME BUTTON
+  ========================= */
+
+  .comingSoon-home-btn {
+    width: 180px;
+    height: 46px;
+
+    margin-top: 24px;
+  }
+
+  /* =========================
+     BROWSE
+  ========================= */
+
+  .comingSoon-browseBooks-btn {
+    margin-top: 18px;
+  }
+}

@@ -1,0 +1,260 @@
+/* =========================
+   POPULAR BOOKS SECTION
+========================= */
+
+.bookcard-main {
+  width: 100%;
+  padding: 55px 50px;
+  box-sizing: border-box;
+  background-color: #080f18;
+  color: #ffffff;
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.bookcard-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.bookcard-container1 > div {
+  color: #f1f4f7;
+
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.bookcard-container1 > a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #ffd21f;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.bookcard-container1 > a:hover {
+  color: #ffdf55;
+}
+
+/* View All arrow */
+
+.bookcard-viewall-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.bookcard-viewall-arrow svg {
+  width: 16px;
+  height: 16px;
+
+  fill: currentColor;
+
+  transition: transform 0.2s ease;
+}
+
+.bookcard-container1 > a:hover .bookcard-viewall-arrow svg {
+  transform: translateX(4px);
+}
+
+/* =========================
+   BOOK GRID
+========================= */
+.bookcard-loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bookcard-container2 {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+/* =========================
+   BOOK CARD
+========================= */
+
+.bookcard-card {
+  min-width: 0;
+  height: 300px;
+  width: 180px;
+  overflow: hidden;
+  background-color: #101923;
+  border: 1px solid #202c38;
+  border-radius: 9px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.bookcard-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #394856;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   BOOK IMAGE
+========================= */
+
+.bookcard-card-img {
+  width: 100%;
+  /* new */
+  height: 65%;
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+
+  background-color: #18232e;
+
+  object-fit: cover;
+}
+
+.bookcard-card-img img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* =========================
+   BOOK INFORMATION
+========================= */
+
+.bookcard-card-bookinfo {
+  padding: 10px;
+}
+
+/* Title */
+
+.bookcard-booktitle {
+  color: #f1f4f7;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* Author */
+
+.bookcard-bookauthor,
+.bookcard-bookgenre {
+  margin-top: 0px;
+
+  color: #8e9aa7;
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ratings */
+
+.bookcard-bookratings {
+  margin-top: 0px;
+
+  color: #ffd21f;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .bookcard-main {
+    padding: 45px 30px;
+  }
+
+  .bookcard-container2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .bookcard-main {
+    padding: 40px 18px;
+  }
+
+  /* Section header */
+
+  .bookcard-container1 {
+    margin-bottom: 22px;
+  }
+
+  .bookcard-container1 > div {
+    font-size: 19px;
+  }
+
+  .bookcard-container1 > a {
+    font-size: 13px;
+  }
+
+  /* Two-column mobile grid */
+
+  .bookcard-container2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    padding-bottom: 40px;
+  }
+
+  /* Cards */
+
+  .bookcard-card-bookinfo {
+    padding: 11px;
+  }
+
+  .bookcard-booktitle {
+    font-size: 13px;
+  }
+
+  .bookcard-bookauthor {
+    font-size: 12px;
+  }
+
+  .bookcard-bookratings {
+    margin-top: 8px;
+
+    font-size: 12px;
+  }
+}
